@@ -4,8 +4,6 @@ export const codeBuddyCN: AITool = {
   id: 'code-buddy-cn',
   name: 'Code Buddy (国内版)',
   type: 'IDE',
-  model: '',
-  modelCost: '',
   plans: [
     {
       name: '个人免费版',
