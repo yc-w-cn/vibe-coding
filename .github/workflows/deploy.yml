@@ -37,7 +37,6 @@ jobs:
       - name: Build Next.js (Static Export)
         run: |
           pnpm exec next build
-          pnpm exec next export -o out
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
