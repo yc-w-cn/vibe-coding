@@ -2,7 +2,8 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import Link from 'next/link';
+
+import { cn } from '@/lib/utils';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,20 +28,8 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(geistSans.variable, geistMono.variable, 'antialiased')}
       >
-        <nav className="border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm sticky top-0 z-50">
-          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <Link
-                href="/"
-                className="text-xl font-semibold text-black dark:text-zinc-50"
-              >
-                AI 编程工具
-              </Link>
-            </div>
-          </div>
-        </nav>
         {children}
       </body>
     </html>
