@@ -15,35 +15,30 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  init:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+
   build:
+    needs: init
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: 'pnpm'
-
-      - name: Setup pnpm
-        run: |
-          npm install --global corepack@latest
-          corepack enable
-          corepack prepare pnpm@latest --activate
-          pnpm config set store-dir .pnpm-store
-          echo "pnpm version:"
-          pnpm --version
-
-      - name: pnpm cache
-        uses: actions/cache@v3
-        id: pnpm-cache
-        with:
-          path: .pnpm-store
-          key: pnpm-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
-
       - name: Install deps
         run: pnpm install --frozen-lockfile
 
