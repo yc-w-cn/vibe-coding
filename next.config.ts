@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  basePath: '/vibe-coding',
+  assetPrefix: '/vibe-coding',
 };
 
 export default nextConfig;
