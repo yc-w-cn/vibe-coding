@@ -28,10 +28,19 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
+      - name: pnpm cache
+        uses: actions/cache@v3
+        id: pnpm-cache
+        with:
+          path: .pnpm-store
+          key: pnpm-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
       - name: Setup pnpm
         run: |
+          npm install --global corepack@latest
           corepack enable
-          corepack prepare pnpm@latest --activate
+          corepack prepare pnpm@latest-10 --activate
+          pnpm config set store-dir .pnpm-store
 
       - name: Install deps
         run: pnpm install --frozen-lockfile
