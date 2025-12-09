@@ -15,11 +15,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  init:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [20]
+
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
@@ -29,14 +30,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
-      - name: Install dependencies
-        run: pnpm install
-
-  build:
-    needs: init
-    runs-on: ubuntu-latest
-
-    steps:
+        
       - name: Install deps
         run: pnpm install --frozen-lockfile
 
