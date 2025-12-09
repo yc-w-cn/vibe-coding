@@ -31,29 +31,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
         
-      - name: Install deps
-        run: pnpm install --frozen-lockfile
+      - name: Install Deps
+        run: pnpm install
 
-      - name: Build Next.js (Static Export)
-        run: |
-          pnpm exec next build
+      - name: Build Next.js project
+        run: pnpm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
