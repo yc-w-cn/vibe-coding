@@ -1,8 +1,8 @@
 {
   "name": "@yc-w-cn/vibe-coding",
-  "version": "0.0.1",
-  "private": true,
+  "version": "1.0.0",
   "homepage": "https://yc-w-cn.github.io/vibe-coding",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
