@@ -4,8 +4,6 @@ export const cursor: AITool = {
   id: 'cursor',
   name: 'Cursor',
   type: 'IDE',
-  model: '',
-  modelCost: '',
   plans: [
     {
       name: '免费版',
