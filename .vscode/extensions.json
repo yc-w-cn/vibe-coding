@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "heybourn.headwind",
+    "dbaeumer.vscode-eslint",
+    "sortwindpartners.sortwind"
+  ]
+}

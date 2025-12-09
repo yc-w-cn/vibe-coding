@@ -1,0 +1,5 @@
+# EditorConfig helps maintain consistent coding styles for multiple developers
+root = true
+
+[*]
+end_of_line = lf
