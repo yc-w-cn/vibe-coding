@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 
 import { Badge } from '@/components/ui/badge';
 import {
@@ -11,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { aiTools } from '@/data/ai-tools-index';
+import { aiTools } from '@/data';
 
 export default function Home() {
   const [selectedTools, setSelectedTools] = useState<string[]>([]);

@@ -4,6 +4,7 @@ import { codeBuddyCN } from './tools/code-buddy-cn';
 import { codeBuddyInternational } from './tools/code-buddy-international';
 import { cursor } from './tools/cursor';
 import { githubCopilot } from './tools/github-copilot';
+import { kiro } from './tools/kiro';
 import { qoder } from './tools/qoder';
 import { traeCN } from './tools/trae-cn';
 import { traeInternational } from './tools/trae-international';
@@ -16,6 +17,7 @@ export const aiTools: AITool[] = [
   codeBuddyCN,
   codeBuddyInternational,
   cursor,
+  kiro,
 ];
 
 // 导出单个工具的函数
