@@ -1,9 +1,9 @@
 {
   "name": "@yc-w-cn/vibe-coding",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "homepage": "https://yc-w-cn.github.io/vibe-coding",
   "license": "MIT",
-  "description": "一个用于对比和分析各类 AI 编程工具的 Web 应用，帮助开发者了解不同工具的模型成本、付费计划和功能特性。",
+  "description": "氛围编程（Vibe Coding）国内方案综合对比",
   "keywords": [
     "ai-programming",
     "coding-tools",
