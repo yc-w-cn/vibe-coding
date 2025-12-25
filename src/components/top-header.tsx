@@ -21,10 +21,10 @@ export default function TopHeader() {
           </div>
           <div className="flex items-center">
             <a
-              href="https://yc-w-cn.github.io/vibe-coding"
+              href="https://github.com/yc-w-cn/vibe-coding/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer hover:scale-110"
               aria-label="GitHub Repository"
             >
               <Github className="h-5 w-5" />
