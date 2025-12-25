@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   description: '探索各类 AI 编程工具的模型成本和付费计划',
 };
 
+/**
+ * 根布局组件：应用全局字体与样式
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
