@@ -16,8 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'AI 编程工具',
-  description: '探索各类 AI 编程工具的模型成本和付费计划',
+  title: '氛围编程（Vibe Coding）国内方案综合对比',
+  description:
+    '氛围编程（Vibe Coding）国内方案综合对比，基于选择 IDE 级别或 CLI 级别的方案',
 };
 
 /**
