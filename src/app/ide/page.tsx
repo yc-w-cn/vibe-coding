@@ -1,6 +1,9 @@
 'use client';
 
+import { useState } from 'react';
+
 import AppFooter from '@/components/AppFooter';
+import { ToolFilter } from '@/components/tool-filter';
 import {
   Card,
   CardContent,
@@ -11,6 +14,23 @@ import {
 import { aiTools } from '@/data';
 
 export default function IDE() {
+  const [selectedTools, setSelectedTools] = useState<string[]>([]);
+
+  const filteredTools =
+    selectedTools.length > 0
+      ? aiTools.filter((tool) => selectedTools.includes(tool.name))
+      : aiTools;
+
+  const uniqueToolNames = [...new Set(aiTools.map((tool) => tool.name))];
+
+  const toggleToolSelection = (toolName: string) => {
+    setSelectedTools((prev) =>
+      prev.includes(toolName)
+        ? prev.filter((name) => name !== toolName)
+        : [...prev, toolName],
+    );
+  };
+
   return (
     <div className="min-h-screen bg-zinc-50 font-sans dark:bg-black">
       <main className="w-full max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -23,8 +43,15 @@ export default function IDE() {
           </p>
         </div>
 
+        <ToolFilter
+          allToolNames={uniqueToolNames}
+          selectedTools={selectedTools}
+          onToggle={toggleToolSelection}
+          onClear={() => setSelectedTools([])}
+        />
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {aiTools.map((tool) => (
+          {filteredTools.map((tool) => (
             <Card
               key={tool.id}
               className="border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-none h-full"

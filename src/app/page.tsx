@@ -90,7 +90,7 @@ export default function Home() {
               </p>
             </CardContent>
             <div className="p-6 pt-0">
-              <Link href="/cli" className="block">
+              <Link href="/providers" className="block">
                 <Button className="w-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-900 dark:text-zinc-100 border-0 cursor-pointer">
                   查看供应商
                 </Button>
