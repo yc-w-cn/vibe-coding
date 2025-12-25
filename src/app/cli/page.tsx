@@ -1,6 +1,6 @@
 'use client';
 
-import AppFooter from '@/components/AppFooter';
+import PageLayout from '@/components/page-layout';
 import {
   Card,
   CardContent,
@@ -22,37 +22,34 @@ const cliTools = [
 
 export default function CLI() {
   return (
-    <div className="min-h-screen bg-zinc-50 font-sans dark:bg-black">
-      <main className="w-full max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-semibold text-black dark:text-zinc-50">
-            CLI 级别的 vibe-coding
-          </h1>
-          <p className="mt-2 text-lg text-zinc-600 dark:text-zinc-400">
-            命令行工作流与自动化集成，支持替换底层模型
-          </p>
-        </div>
+    <PageLayout>
+      <div className="mb-8 text-center">
+        <h1 className="text-3xl font-semibold text-black dark:text-zinc-50">
+          CLI 级别的 vibe-coding
+        </h1>
+        <p className="mt-2 text-lg text-zinc-600 dark:text-zinc-400">
+          命令行工作流与自动化集成，支持替换底层模型
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {cliTools.map((tool) => (
-            <Card
-              key={tool.id}
-              className="border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-none"
-            >
-              <CardHeader className="pb-2">
-                <CardTitle className="text-lg text-black dark:text-zinc-50">
-                  {tool.name}
-                </CardTitle>
-                <CardDescription className="text-zinc-600 dark:text-zinc-400">
-                  {tool.note}
-                </CardDescription>
-              </CardHeader>
-              <CardContent />
-            </Card>
-          ))}
-        </div>
-      </main>
-      <AppFooter />
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {cliTools.map((tool) => (
+          <Card
+            key={tool.id}
+            className="border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-none"
+          >
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg text-black dark:text-zinc-50">
+                {tool.name}
+              </CardTitle>
+              <CardDescription className="text-zinc-600 dark:text-zinc-400">
+                {tool.note}
+              </CardDescription>
+            </CardHeader>
+            <CardContent />
+          </Card>
+        ))}
+      </div>
+    </PageLayout>
   );
 }

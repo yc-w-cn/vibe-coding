@@ -30,7 +30,9 @@ export function ToolFilter({
             key={toolName}
             variant={selectedTools.includes(toolName) ? 'default' : 'outline'}
             className="cursor-pointer hover:bg-zinc-900 dark:hover:bg-zinc-50"
-            onClick={() => onToggle(toolName)}
+            onClick={() => {
+              onToggle(toolName);
+            }}
           >
             {toolName}
           </Badge>
