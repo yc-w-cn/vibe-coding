@@ -2,6 +2,17 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.1.1] - 2026-01-06
+
+### 文档更新
+- 更新 CLI 工具列表，添加新工具和修改描述
+  - 修改 Codex 描述为"OpenAI 终端编码代理"
+  - 新增 Cursor CLI 工具：IDE 级代码理解带到终端
+  - 新增 Open Code 工具：终端 AI 助手
+  - 新增 Goose 工具：本机运行的 AI 代理
+  - 新增 Crush 工具：Open Code 的精神续作
+  - 新增 trae-agent 工具：Trae AI 代理
+
 ## [1.1.0] - 2025-12-25
 
 ### 新增功能
