@@ -17,7 +17,12 @@ const cliTools = [
   },
   { id: 'gemini-cli', name: 'Gemini CLI', note: '谷歌官方命令行工具' },
   { id: 'qwen-code', name: 'Qwen Code', note: '阿里通义代码工具' },
-  { id: 'codex', name: 'Codex', note: '开源/兼容命令行方案' },
+  { id: 'codex', name: 'Codex', note: 'OpenAI 终端编码代理' },
+  { id: 'cursor-cli', name: 'Cursor CLI', note: 'IDE 级代码理解带到终端' },
+  { id: 'open-code', name: 'Open Code', note: '终端 AI 助手' },
+  { id: 'goose', name: 'Goose', note: '本机运行的 AI 代理' },
+  { id: 'crush', name: 'Crush', note: 'Open Code 的精神续作' },
+  { id: 'trae-agent', name: 'trae-agent', note: 'Trae AI 代理' },
 ];
 
 export default function CLI() {
